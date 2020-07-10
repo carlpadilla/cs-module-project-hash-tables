@@ -98,7 +98,7 @@ class HashTable:
         """
         # Your code here
         if self.buckets[self.hash_index(key)] is None:
-            print('Key not found')
+            print('No Key Found!')
         else:
             self.buckets[self.hash_index(key)] = None
 
