@@ -183,6 +183,23 @@ class HashTable:
         """
         # Your code here
 
+        # Store a reference to the current hash table
+        current_table = self.storage
+
+        # Store the current capacity
+        current_capacity = self.capacity
+
+        # Update the capacity to new_capacity
+        self.capacity = new_capacity
+
+        # Create a new list of size new_capacity
+        self.storage = [None] * new_capacity
+
+        for node in current_table:
+            while node is not None:
+                self.put(node.key, node.value)
+                node = node.next
+
 
 if __name__ == "__main__":
     ht = HashTable(8)
